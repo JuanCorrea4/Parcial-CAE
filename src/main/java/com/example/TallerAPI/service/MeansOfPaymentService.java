@@ -16,38 +16,38 @@ public class MeansOfPaymentService {
     @Autowired
     private MeansOfPaymentRepository meansOfPaymentRepository;
 
-    // Get all students
+    // Get all means of payments
     public List<MeansOfPayment> getAllMeansOfPayments() {
         try {
             return meansOfPaymentRepository.findAll();
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error getting courses: " + e.getMessage());
-            throw new RuntimeException("Error getting courses", e);
+            System.out.println("Error getting means of payments: " + e.getMessage());
+            throw new RuntimeException("Error getting means of payments", e);
         }
     }
 
-    // Create a new student
+    // Create a new mean of payment
     @Transactional
     public MeansOfPayment newMeansOfPayment(MeansOfPayment meansOfPayment) {
         try {
             return meansOfPaymentRepository.save(meansOfPayment);
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error saving course: " + e.getMessage());
-            throw new RuntimeException("Error saving course", e);
+            System.out.println("Error saving mean of payment: " + e.getMessage());
+            throw new RuntimeException("Error saving mean of payment", e);
         }
     }
 
-    // Delete a student
+    // Delete a mean of payment
     @Transactional
     public void deleteMeansOfPaymentById(Long id) {
         try {
             meansOfPaymentRepository.deleteById(id);
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error deleting course: " + e.getMessage());
-            throw new RuntimeException("Error deleting course", e);
+            System.out.println("Error deleting mean of payment: " + e.getMessage());
+            throw new RuntimeException("Error deleting mean of payment", e);
         }
     }
 }

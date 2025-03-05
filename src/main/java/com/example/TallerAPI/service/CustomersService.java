@@ -16,38 +16,38 @@ public class CustomersService {
     @Autowired
     private CustomersRepository customersRepository;
 
-    // Get all students
+    // Get all customers
     public List<Customer> getAllCustomers() {
         try {
             return customersRepository.findAll();
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error getting courses: " + e.getMessage());
-            throw new RuntimeException("Error getting courses", e);
+            System.out.println("Error getting customers: " + e.getMessage());
+            throw new RuntimeException("Error getting customers", e);
         }
     }
 
-    // Create a new student
+    // Create a new customer
     @Transactional
     public Customer newCustomer(Customer customer) {
         try {
             return customersRepository.save(customer);
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error saving course: " + e.getMessage());
-            throw new RuntimeException("Error saving course", e);
+            System.out.println("Error saving customer: " + e.getMessage());
+            throw new RuntimeException("Error saving customer", e);
         }
     }
 
-    // Delete a student
+    // Delete a customer
     @Transactional
     public void deleteCustomerById(Long id) {
         try {
             customersRepository.deleteById(id);
         } catch (Exception e) {
             // Loguear la excepción
-            System.out.println("Error deleting course: " + e.getMessage());
-            throw new RuntimeException("Error deleting course", e);
+            System.out.println("Error deleting customer: " + e.getMessage());
+            throw new RuntimeException("Error deleting customer", e);
         }
     }
 }
